@@ -30,7 +30,7 @@ function convertMs(ms) {
   const hours = par(Math.floor((ms % day) / hour));
   // Remaining minutes
   const minutes = par(Math.floor(((ms % day) % hour) / minute));
-  // Remaining seconds
+
   const seconds = par(Math.floor((((ms % day) % hour) % minute) / second));
 
   return { days, hours, minutes, seconds };
