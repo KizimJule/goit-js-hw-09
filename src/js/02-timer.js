@@ -3,20 +3,21 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const input = document.querySelector('#datetime-picker');
+
 const startTimerBtn = document.querySelector('[data-start]');
 const daysSpan = document.querySelector('[data-days]');
 const hoursSpan = document.querySelector('[data-hours]');
 const minutesSpan = document.querySelector('[data-minutes]');
 const secondsSpan = document.querySelector('[data-seconds]');
+let intervalId = null;
 
 //изначально кноака не активна
 startTimerBtn.setAttribute('disabled', true);
 
-let intervalId = null;
-
 function par(value) {
   return String(value).padStart(2, '0');
 }
+
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -60,6 +61,8 @@ const options = {
         const result = convertMs(timeDifference);
         viewOfTimer(result);
       });
+      startTimerBtn.setAttribute('disabled', true);
+      input.setAttribute('disabled', true);
     });
   },
 };

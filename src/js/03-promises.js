@@ -26,8 +26,8 @@ function submitPromise(evt) {
   let amountNumb = amount.valueAsNumber;
 
   for (let i = 1; i <= amountNumb; i++) {
-    createPromise(i, delayNumb)
-      .then(({ position, delayNumb }) => {
+    createPromise(i, delay)
+      .then(({ position, delay }) => {
         Notiflix.Notify.success(`✅ Fulfilled promise ${i} in ${delayNumb}ms`);
       })
       .catch(({ position, delay }) => {
