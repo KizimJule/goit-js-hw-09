@@ -42,8 +42,8 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
-    console.log(options.defaultDate);
+    // console.log(selectedDates[0]);
+    // console.log(options.defaultDate);
     //если выбрали дату в прошлом, то выдаст предупреждение и выполнение кода прекратится, если дата в будущем - кнопка станет активной и начнется отсчет времени до выбранной даты
     if (options.defaultDate > selectedDates[0]) {
       Notify.failure('Please choose a date in the future');
@@ -73,6 +73,6 @@ function viewOfTimer({ days, hours, minutes, seconds }) {
   secondsSpan.textContent = `${seconds}`;
 }
 
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+// console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
+// console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
+// console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
